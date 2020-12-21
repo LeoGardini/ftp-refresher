@@ -1,0 +1,8 @@
+# Directories
+/.idea/
+/.vscode/
+__pycache__/
+
+# Files
+.env
+*.py[ioc]
