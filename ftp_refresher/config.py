@@ -1,16 +1,18 @@
 # coding: utf-8
 
-from os import environ, path
-
-from dotenv import load_dotenv
-
-# Carrega as informações do .env
-basedir = path.abspath(path.dirname(__file__))
-load_dotenv(path.join(basedir, '.env'))
+from os import environ
 
 # Informações de acesso
 HOST = environ.get('HOST')
 USER = environ.get('USER')
 PASSWD = environ.get('PASSWORD')
-SSH_KEY = environ.get('SSH_KEY')
-REMOTE_PATH = environ.get('REMOTE_PATH')
+
+# Local onde serão armazenados os arquivos localmente
+LOCAL_PATH = environ.get('LOCAL_PATH')
+
+# Arquivos que serão baixados durante a execução
+FILENAMES = [
+    'SUBGRUPO.DBF', 'COD_KAR.NTX', 'DESC_KAR.NTX', 'COD_KAUX.NTX',
+    'DATATEMP.DBF', 'KARDEX.DBF', 'KARDAUX.DBF', 'MINMAX.DBF', 'DESC_SUB.NTX',
+    'COD_MMAX.NTX', 'COD_GRU.NTX', 'DESC_GRU.NTX', 'COD_SUB.NTX', 'GRUPOS.DBF'
+]
