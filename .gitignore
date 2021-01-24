@@ -1,8 +1,12 @@
 # Directories
+/dist/
+/build/
 /.idea/
 /.vscode/
 __pycache__/
 
 # Files
 .env
+*.exe
+*.spec
 *.py[ioc]

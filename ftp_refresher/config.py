@@ -1,6 +1,12 @@
 # coding: utf-8
 
+import json
 from os import environ
+from pathlib import Path
+
+from dotenv import load_dotenv
+
+load_dotenv(Path.cwd().joinpath('.env'))
 
 # Informações de acesso
 HOST = environ.get('HOST')
@@ -11,8 +17,4 @@ PASSWD = environ.get('PASSWORD')
 LOCAL_PATH = environ.get('LOCAL_PATH')
 
 # Arquivos que serão baixados durante a execução
-FILENAMES = [
-    'SUBGRUPO.DBF', 'COD_KAR.NTX', 'DESC_KAR.NTX', 'COD_KAUX.NTX',
-    'DATATEMP.DBF', 'KARDEX.DBF', 'KARDAUX.DBF', 'MINMAX.DBF', 'DESC_SUB.NTX',
-    'COD_MMAX.NTX', 'COD_GRU.NTX', 'DESC_GRU.NTX', 'COD_SUB.NTX', 'GRUPOS.DBF'
-]
+FILENAMES = json.loads(environ.get('FILENAMES'))
